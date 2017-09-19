@@ -1,6 +1,7 @@
 import koaRouter from 'koa-joi-router';
 
 const router = koaRouter();
+router.prefix('/api')
 
 async function ctrl(ctx) {
   if (ctx.state.isAuthenticated)

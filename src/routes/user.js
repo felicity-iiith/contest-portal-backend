@@ -6,16 +6,17 @@ import { isAuthenticated } from '../middleware/auth'
 
 const Joi = koaRouter.Joi;
 const router = koaRouter();
+router.prefix('/api/users')
 
 const routes = [
   {
     method: 'post',
-    path: '/users',
+    path: '/',
     handler: ctrl.create,
   },
   {
     method: 'get',
-    path: '/users/:id',
+    path: '/:id',
     handler: [ isAuthenticated, ctrl.get ],
     validate: {
       params: {

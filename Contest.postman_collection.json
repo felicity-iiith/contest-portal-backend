@@ -14,7 +14,7 @@
 				{
 					"name": "View Question",
 					"request": {
-						"url": "localhost:3000/questions/1",
+						"url": "localhost:3000/api/questions/1",
 						"method": "GET",
 						"header": [
 							{

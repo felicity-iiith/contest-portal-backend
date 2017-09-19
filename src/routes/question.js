@@ -6,11 +6,12 @@ import { isAuthenticated } from '../middleware/auth'
 
 const Joi = koaRouter.Joi;
 const router = koaRouter();
+router.prefix('/api/questions')
 
 const routes = [
   {
     method: 'get',
-    path: '/questions/:qno',
+    path: '/:qno',
     handler: [ isAuthenticated, ctrl.get ],
     validate: {
       params: {
