@@ -1,0 +1,28 @@
+{
+  "name": "contest-backend",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node bin/server",
+    "watch": "nodemon --watch src --inspect --debug bin/server",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Megh Parikh <meghprkh@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-node8": "^1.2.0",
+    "koa": "^2.3.0",
+    "koa-compose": "^4.0.0",
+    "koa-joi-router": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "eslint": "^4.7.1",
+    "nodemon": "^1.12.1"
+  }
+}
