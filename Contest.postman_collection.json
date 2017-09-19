@@ -1,0 +1,34 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Contest",
+		"_postman_id": "e588830b-dff4-b44d-c938-60d8c4844228",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Questions",
+			"description": "",
+			"item": [
+				{
+					"name": "View Question",
+					"request": {
+						"url": "localhost:3000/questions/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "{{email}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
