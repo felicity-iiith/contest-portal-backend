@@ -18,7 +18,9 @@
     "babel-preset-node8": "^1.2.0",
     "koa": "^2.3.0",
     "koa-compose": "^4.0.0",
-    "koa-joi-router": "^5.0.0"
+    "koa-joi-router": "^5.0.0",
+    "sequelize": "^4.8.4",
+    "sqlite3": "^3.1.11"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
