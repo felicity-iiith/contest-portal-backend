@@ -2,6 +2,8 @@ import koaRouter from 'koa-joi-router';
 
 import * as ctrl from '../controllers/user';
 
+import { isAuthenticated } from '../middleware/auth'
+
 const Joi = koaRouter.Joi;
 const router = koaRouter();
 
@@ -14,7 +16,7 @@ const routes = [
   {
     method: 'get',
     path: '/users/:id',
-    handler: ctrl.get,
+    handler: [ isAuthenticated, ctrl.get ],
     validate: {
       params: {
         id: Joi.number()

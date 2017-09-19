@@ -3,7 +3,10 @@ import koaRouter from 'koa-joi-router';
 const router = koaRouter();
 
 async function ctrl(ctx) {
-  ctx.body = 'Hello World!'
+  if (ctx.state.isAuthenticated)
+    ctx.body = `Hello ${ctx.state.user.name}!`
+  else
+    ctx.body = `Hello World!`
 }
 
 const routes = [

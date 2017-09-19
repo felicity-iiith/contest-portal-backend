@@ -2,10 +2,10 @@ import Sequelize from 'sequelize';
 import db from './db'
 
 const User = db.define('user', {
-  firstName: {
+  email: {
     type: Sequelize.STRING
   },
-  lastName: {
+  name: {
     type: Sequelize.STRING
   }
 });
