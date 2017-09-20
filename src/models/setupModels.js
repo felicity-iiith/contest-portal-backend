@@ -1,6 +1,8 @@
 import User from './User'
 import Question from './Question'
 
+// Remember to change if scores have been added
+
 export default async function setupModels() {
   await User.sync({ force: true })
   await User.bulkCreate([

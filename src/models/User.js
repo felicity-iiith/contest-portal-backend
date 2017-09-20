@@ -8,6 +8,7 @@ const User = db.define('user', {
   name: {
     type: Sequelize.STRING
   }
+  // Add score for the user
 });
 
 export default User

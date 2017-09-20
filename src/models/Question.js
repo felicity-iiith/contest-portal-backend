@@ -5,9 +5,11 @@ const Question = db.define('question', {
   qno: {
     type: Sequelize.INTEGER
   },
+  // Add question type (other than string answer?)
   title: {
     type: Sequelize.STRING
   },
+  // Add provision for image
   body: {
     type: Sequelize.STRING
   },

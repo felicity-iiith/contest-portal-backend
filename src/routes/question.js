@@ -16,6 +16,7 @@ const routes = [
     validate: {
       params: {
         qno: Joi.number()
+        // Validate other parameters of the question
       }
     }
   },
