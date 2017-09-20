@@ -8,6 +8,7 @@ export async function get(ctx) {
   })
 }
 
-export async function del(ctx) {
-  ctx.body = 'Delete user'
+export async function checkAnswer(ctx) {
+  // XXX: Need to fill in this stub and return true or false
+  ctx.body = ctx.request.body;
 }

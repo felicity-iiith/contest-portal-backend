@@ -16,7 +16,20 @@ const routes = [
     validate: {
       params: {
         qno: Joi.number()
-        // Validate other parameters of the question
+      }
+    }
+  },
+  {
+    method: 'post',
+    path: '/:qno/answer',
+    handler: [ isAuthenticated, ctrl.checkAnswer ],
+    validate: {
+      params: {
+        qno: Joi.number()
+      },
+      type: 'form',
+      body: {
+        answer: Joi.string(),
       }
     }
   },
