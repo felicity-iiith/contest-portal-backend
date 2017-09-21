@@ -27,3 +27,9 @@ Enter the directory.
 ```
 yarn watch
 ```
+
+## Technologies used / docs for reference
+- [koajs](http://koajs.com/)
+- [sequelize](http://docs.sequelizejs.com/)
+- [koa-joi-router](https://github.com/koajs/joi-router) and [joi](https://github.com/hapijs/joi)
+- Postman for debugging ([see these videos](https://www.getpostman.com/support))
