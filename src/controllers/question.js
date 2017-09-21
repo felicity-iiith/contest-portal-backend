@@ -12,3 +12,8 @@ export async function checkAnswer(ctx) {
   // XXX: Need to fill in this stub and return true or false
   ctx.body = ctx.request.body;
 }
+
+export async function getAll(ctx) {
+  // XXX: Include only question number and title and nothing else
+  ctx.body = ctx.request.body
+}
