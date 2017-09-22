@@ -1,4 +1,4 @@
-import Scoreboard from '../models/Scoreboard'
+// import Scoreboard from '../models/Scoreboard'
 
 export async function get(ctx) {
   // Get scoreboard

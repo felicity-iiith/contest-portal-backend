@@ -9,4 +9,5 @@ export default compose([
   main.middleware(),
   user.middleware(),
   question.middleware(),
+  scoreboard.middleware(),
 ])
