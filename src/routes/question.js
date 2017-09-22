@@ -12,7 +12,7 @@ const routes = [
   {
     method: 'get',
     path: '/:qno',
-    handler: [ isAuthenticated, ctrl.get ],
+    handler: [ isAuthenticated, ctrl.isUnlocked, ctrl.get ],
     validate: {
       params: {
         qno: Joi.number()
@@ -30,6 +30,16 @@ const routes = [
       type: 'form',
       body: {
         answer: Joi.string(),
+      }
+    }
+  },
+  {
+    method: 'get',
+    path: '/',
+    handler: [ isAuthenticated, ctrl.getAll ],
+    validate: {
+      params: {
+        // XXX: Perform necessary validation
       }
     }
   },
