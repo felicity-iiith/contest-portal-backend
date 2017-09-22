@@ -10,6 +10,7 @@ export async function get(ctx) {
 
 export async function checkAnswer(ctx) {
   // XXX: Need to fill in this stub and return true or false
+  // XXX: If true update score and max unlocked question is necessary
   ctx.body = ctx.request.body;
 }
 
