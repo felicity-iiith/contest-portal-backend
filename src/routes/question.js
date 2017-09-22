@@ -12,7 +12,7 @@ const routes = [
   {
     method: 'get',
     path: '/:qno',
-    handler: [ isAuthenticated, ctrl.get ],
+    handler: [ isAuthenticated, ctrl.isUnlocked, ctrl.get ],
     validate: {
       params: {
         qno: Joi.number()
