@@ -10,9 +10,10 @@ const User = db.define('user', {
   },
   score:{
     type: Sequelize.INTEGER
-  }
-  // XXX: Add score for the user
-  // XXX: Add max unlocked question for user
+  },
+  maxUnlock:{
+    type: Sequelize.INTEGER
+  },
 });
 
 export default User
