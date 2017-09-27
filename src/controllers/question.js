@@ -15,8 +15,10 @@ export async function checkAnswer(ctx) {
 }
 
 export async function getAll(ctx) {
+  ctx.body = await Question.findAll({
+    attributes: { exclude: [ 'answer', 'body' ] }
+  })
   // XXX: Include only question number and title and nothing else
-  ctx.body = ctx.request.body
 }
 
 export async function isUnlocked(ctx) {

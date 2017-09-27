@@ -37,11 +37,6 @@ const routes = [
     method: 'get',
     path: '/',
     handler: [ isAuthenticated, ctrl.getAll ],
-    validate: {
-      params: {
-        // XXX: Perform necessary validation
-      }
-    }
   },
 ];
 
