@@ -11,11 +11,6 @@ const routes = [
     method: 'get',
     path: '/',
     handler: [ ctrl.get ],
-    validate: {
-      params: {
-        // XXX: Add any validation if required
-      }
-    }
   },
 ];
 
