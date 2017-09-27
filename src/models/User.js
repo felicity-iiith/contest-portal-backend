@@ -7,7 +7,7 @@ const User = db.define('user', {
   },
   name: {
     type: Sequelize.STRING
-  },
+  }
   // XXX: Add score for the user
   // XXX: Add max unlocked question for user
 });
