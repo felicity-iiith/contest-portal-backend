@@ -28,14 +28,4 @@ export async function getAll(ctx) {
     attributes: { exclude: [ 'answer', 'body' ] }
   })
   // XXX: Include only question number and title and nothing else
-<<<<<<< HEAD
-  ctx.body = ctx.request.body
 }
-
-export async function isUnlocked(ctx) {
-  // XXX: Check if the question has been unlocked by the user
-  ctx.body = ctx.request.body
-}
-=======
-}
->>>>>>> 4638b58b42e338c4f413a5493e20ab4d46ed5180
