@@ -3,6 +3,7 @@ import koaRouter from 'koa-joi-router';
 import * as ctrl from '../controllers/question';
 
 import { isAuthenticated } from '../middleware/auth'
+import { isUnlocked } from '../middleware/isUnlocked'
 
 const Joi = koaRouter.Joi;
 const router = koaRouter();
@@ -12,7 +13,7 @@ const routes = [
   {
     method: 'get',
     path: '/:qno',
-    handler: [ isAuthenticated, ctrl.isUnlocked, ctrl.get ],
+    handler: [ isAuthenticated, isUnlocked, ctrl.get ],
     validate: {
       params: {
         qno: Joi.number()

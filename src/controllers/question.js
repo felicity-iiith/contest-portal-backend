@@ -27,8 +27,3 @@ export async function getAll(ctx) {
   // XXX: Include only question number and title and nothing else
   ctx.body = ctx.request.body
 }
-
-export async function isUnlocked(ctx) {
-  // XXX: Check if the question has been unlocked by the user
-  ctx.body = ctx.request.body
-}
