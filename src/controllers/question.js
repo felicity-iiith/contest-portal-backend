@@ -1,4 +1,6 @@
 import Question from '../models/Question'
+import User from '../models/User'
+
 
 export async function get(ctx) {
   const { qno } = ctx.params
@@ -9,12 +11,26 @@ export async function get(ctx) {
 }
 
 export async function checkAnswer(ctx) {
+  const { qno } = ctx.params
+  const question = await Question.findOne({
+    where: { qno },
+  })
   // XXX: Need to fill in this stub and return true or false
   // XXX: If true update score and max unlocked question is necessary
   ctx.body = ctx.request.body;
-}
+  if(ctx.body.answer==question.answer){
+    ctx.body = { response: true }
+  }
+  else ctx.body = { response: false }
 
+}
 export async function getAll(ctx) {
+  const { qno } = ctx.params
+  const question = await Question.findOne({
+    where: { qno },
+    attributes: { exclude: [ 'answer' ] }
+  })
+  console.log(question)
   // XXX: Include only question number and title and nothing else
   ctx.body = ctx.request.body
 }
