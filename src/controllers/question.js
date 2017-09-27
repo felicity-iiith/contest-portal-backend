@@ -22,7 +22,7 @@ export async function checkAnswer(ctx) {
     if(user.maxUnlock==qno){
       user.maxUnlock+=1
       user.score+=20
-      user.update({score: user.score, maxUnlock: user.maxUnlock})      
+      await user.save()      
     }
     ctx.body = { response: true }
   }
