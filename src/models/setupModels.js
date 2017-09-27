@@ -6,11 +6,11 @@ import Question from './Question'
 export default async function setupModels() {
   await User.sync({ force: true })
   await User.bulkCreate([
-    { email: 'user1@gmail.com', name: 'User 1' },
-    { email: 'user2@gmail.com', name: 'User 2' },
-    { email: 'user3@gmail.com', name: 'User 3' },
-    { email: 'user4@gmail.com', name: 'User 4' },
-    { email: 'user5@gmail.com', name: 'User 5' },
+    { email: 'user1@gmail.com', name: 'User 1', score:40},
+    { email: 'user2@gmail.com', name: 'User 2', score:40},
+    { email: 'user3@gmail.com', name: 'User 3', score:40},
+    { email: 'user4@gmail.com', name: 'User 4', score:30},
+    { email: 'user5@gmail.com', name: 'User 5', score:50},
   ]);
   await Question.sync({ force: true })
   await Question.bulkCreate([
