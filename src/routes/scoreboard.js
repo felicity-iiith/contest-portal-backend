@@ -13,7 +13,6 @@ const routes = [
     handler: [ ctrl.get ],
     validate: {
       params: {
-        // "score" :20
         // XXX: Add any validation if required
       }
     }

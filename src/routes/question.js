@@ -30,7 +30,7 @@ const routes = [
       },
       type: 'form',
       body: {
-        answer:Joi.string(),
+        answer: Joi.string(),
       }
     }
   },
