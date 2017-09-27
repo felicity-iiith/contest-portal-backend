@@ -25,12 +25,6 @@ export async function checkAnswer(ctx) {
 
 }
 export async function getAll(ctx) {
-  const { qno } = ctx.params
-  const question = await Question.findOne({
-    where: { qno },
-    attributes: { exclude: [ 'answer' ] }
-  })
-  console.log(question)
   // XXX: Include only question number and title and nothing else
   ctx.body = ctx.request.body
 }
