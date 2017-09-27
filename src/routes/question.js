@@ -43,6 +43,16 @@ const routes = [
       }
     }
   },
+  {
+    method: 'get',
+    path: '/:qno/info',
+    handler: [ isAuthenticated, ctrl.getAll ],
+    validate: {
+      params: {
+        qno: Joi.number()
+      },
+    }
+  },
 ];
 
 router.route(routes);
