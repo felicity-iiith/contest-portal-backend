@@ -18,6 +18,12 @@ export async function checkAnswer(ctx) {
   // XXX: If true update score and max unlocked question is necessary
   ctx.body = ctx.request.body;
   if(ctx.body.answer==question.answer){
+    const { user }=ctx.state
+    if(user.maxUnlock==qno){
+      user.maxUnlock+=1
+      user.score+=20
+      user.update({score: user.score, maxUnlock: user.maxUnlock})      
+    }
     ctx.body = { response: true }
   }
   else ctx.body = { response: false }

@@ -7,6 +7,12 @@ const User = db.define('user', {
   },
   name: {
     type: Sequelize.STRING
+  },
+  score: {
+    type: Sequelize.INTEGER
+  },
+  maxUnlock: {
+    type: Sequelize.INTEGER
   }
   // XXX: Add score for the user
   // XXX: Add max unlocked question for user
