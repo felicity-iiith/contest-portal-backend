@@ -1,5 +1,4 @@
 import Question from '../models/Question'
-import User from '../models/User'
 
 
 export async function get(ctx) {
