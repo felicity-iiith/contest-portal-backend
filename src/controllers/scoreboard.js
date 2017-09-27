@@ -1,6 +1,9 @@
-// import Scoreboard from '../models/Scoreboard'
+import User from '../models/User'
 
 export async function get(ctx) {
-  // Get scoreboard
-  ctx.body = ctx.request.body
+  ctx.body = await User.findAll({
+    order :  [
+      ['score', 'DESC']],
+    attributes: { exclude: [ 'email' ] }
+  })
 }

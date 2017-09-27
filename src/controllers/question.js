@@ -14,10 +14,14 @@ export async function checkAnswer(ctx) {
   const question = await Question.findOne({
     where: { qno },
   })
-  // XXX: Need to fill in this stub and return true or false
-  // XXX: If true update score and max unlocked question is necessary
   ctx.body = ctx.request.body;
-  if(ctx.body.answer==question.answer){
+  if (ctx.body.answer == question.answer) {
+    const { user } = ctx.state
+    if (user.maxUnlock == qno) {
+      user.maxUnlock += 1
+      user.score += 20
+      await user.save()
+    }
     ctx.body = { response: true }
   }
   else ctx.body = { response: false }
