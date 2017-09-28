@@ -16,12 +16,9 @@ export async function checkAnswer(ctx) {
   })
   ctx.body = ctx.request.body;
   const {user} = ctx.state
-  const useranswer = UserAnswer.build({
-                                        questionId: question.id,
-                                        userId: user.id,
-                                        useranswer: JSON.stringify(question.answer)
-                                     })
-  await useranswer.save()
+  await UserAnswer.create(
+    { questionId: question.id, userId: user.id, useranswer: JSON.stringify(question.answer)}
+  )
   if (ctx.body.answer in JSON.parse(question.answer)) {
     const { user } = ctx.state
     if (user.maxUnlock == qno) {
