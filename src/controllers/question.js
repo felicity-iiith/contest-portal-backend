@@ -15,7 +15,7 @@ export async function checkAnswer(ctx) {
     where: { qno },
   })
   ctx.body = ctx.request.body;
-  if (ctx.body.answer == question.answer) {
+  if (ctx.body.answer in JSON.parse(question.answer)) {
     const { user } = ctx.state
     if (user.maxUnlock == qno) {
       user.maxUnlock += 1
