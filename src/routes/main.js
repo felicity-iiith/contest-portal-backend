@@ -11,7 +11,7 @@ async function ctrl(ctx) {
 }
 
 export async function userinfo(ctx) {
-	ctx.body = ctx.state.user
+  ctx.body = ctx.state.user
 }
 
 const routes = [
@@ -23,7 +23,7 @@ const routes = [
   {
     method: 'get',
     path: '/userinfo',
-    handler: [isAuthenticated, isUnlocked,userinfo]	
+    handler: userinfo	
   },
 ];
 
