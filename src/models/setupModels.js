@@ -6,18 +6,18 @@ import Question from './Question'
 export default async function setupModels() {
   await User.sync({ force: true })
   await User.bulkCreate([
-    { email: 'user1@gmail.com', name: 'User 1', score:40},
-    { email: 'user2@gmail.com', name: 'User 2', score:40},
-    { email: 'user3@gmail.com', name: 'User 3', score:40},
-    { email: 'user4@gmail.com', name: 'User 4', score:30},
-    { email: 'user5@gmail.com', name: 'User 5', score:50},
+    { email: 'user1@gmail.com', name: 'User 1', score:40, maxUnlock: 2},
+    { email: 'user2@gmail.com', name: 'User 2', score:40, maxUnlock: 2},
+    { email: 'user3@gmail.com', name: 'User 3', score:40, maxUnlock: 2},
+    { email: 'user4@gmail.com', name: 'User 4', score:30, maxUnlock: 1},
+    { email: 'user5@gmail.com', name: 'User 5', score:50, maxUnlock: 3},
   ]);
   await Question.sync({ force: true })
   await Question.bulkCreate([
-    { qno: 1, title: 'QTitle 1', body: 'QBody 1', answer: '1', maxUnlock: 1 },
-    { qno: 2, title: 'QTitle 2', body: 'QBody 2', answer: '2', maxUnlock: 1 },
-    { qno: 3, title: 'QTitle 3', body: 'QBody 3', answer: '3', maxUnlock: 1 },
-    { qno: 4, title: 'QTitle 4', body: 'QBody 4', answer: '4', maxUnlock: 1 },
-    { qno: 5, title: 'QTitle 5', body: 'QBody 5', answer: '5', maxUnlock: 1 },
+    { qno: 1, title: 'QTitle 1', body: 'QBody 1', answer: JSON.stringify(['a', 'b', 'c'])},
+    { qno: 2, title: 'QTitle 2', body: 'QBody 2', answer: '2'},
+    { qno: 3, title: 'QTitle 3', body: 'QBody 3', answer: JSON.stringify(['a', 'b', 'c'])},
+    { qno: 4, title: 'QTitle 4', body: 'QBody 4', answer: '4'},
+    { qno: 5, title: 'QTitle 5', body: 'QBody 5', answer: '5'},
   ]);
 }
