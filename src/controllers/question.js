@@ -1,5 +1,6 @@
 import Question from '../models/Question'
 import UserAnswer from '../models/UserAnswer'
+import Comment from '../models/Comment'
 
 export async function get(ctx) {
   const { qno } = ctx.params
@@ -36,4 +37,13 @@ export async function getAll(ctx) {
     attributes: { exclude: [ 'answer', 'body' ] }
   })
   // XXX: Include only question number and title and nothing else
+}
+export async function addcomment(ctx) { 
+  const { qno } = ctx.params
+  const { user } = ctx.state
+  const question = await Question.findOne({
+    where: { qno },
+  })
+  await Comment.create({ qid: question.id, uid: user.id, comment: ctx.request.body.comment})
+  ctx.body = { response: ctx.request.body.comment }
 }
