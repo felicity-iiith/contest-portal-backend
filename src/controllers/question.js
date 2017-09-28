@@ -17,7 +17,7 @@ export async function checkAnswer(ctx) {
   ctx.body = ctx.request.body;
   const {user} = ctx.state
   await UserAnswer.create(
-    { questionId: question.id, userId: user.id, useranswer: JSON.stringify(question.answer)}
+    { questionId: question.id, userId: user.id, useranswer: ctx.body.answer}
   )
   if (ctx.body.answer in JSON.parse(question.answer)) {
     const { user } = ctx.state
