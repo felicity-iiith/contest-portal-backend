@@ -5,6 +5,7 @@ export async function get(ctx) {
   const { qno } = ctx.params
   ctx.body = await Question.findOne({
     where: { qno },
+    attributes: { exclude: [ 'answer' ] }
   })
 }
 
