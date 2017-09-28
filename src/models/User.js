@@ -3,7 +3,7 @@ import db from './db'
 
 const User = db.define('user', {
   email: {
-    type: Sequelize.TEXT,
+    type: Sequelize.STRING,
     unique: true,
     allowNull: false,
     validate: {
@@ -11,7 +11,7 @@ const User = db.define('user', {
     }
   },
   name: {
-    type: Sequelize.TEXT,
+    type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: true

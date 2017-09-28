@@ -29,7 +29,7 @@ const Question = db.define('question', {
     }
   },
   answer: {
-    type: Sequelize.JSON,
+    type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: true,
