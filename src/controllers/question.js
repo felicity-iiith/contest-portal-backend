@@ -1,5 +1,5 @@
 import Question from '../models/Question'
-
+import UserAnswer from '../models/UserAnswer'
 
 export async function get(ctx) {
   const { qno } = ctx.params
@@ -15,6 +15,13 @@ export async function checkAnswer(ctx) {
     where: { qno },
   })
   ctx.body = ctx.request.body;
+  const {user} = ctx.state
+  const useranswer = UserAnswer.build({
+                                        questionId: question.id,
+                                        userId: user.id,
+                                        useranswer: JSON.stringify(question.answer)
+                                     })
+  await useranswer.save()
   if (ctx.body.answer in JSON.parse(question.answer)) {
     const { user } = ctx.state
     if (user.maxUnlock == qno) {

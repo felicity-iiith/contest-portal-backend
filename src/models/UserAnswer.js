@@ -4,15 +4,7 @@ import User from './User'
 import Question from './Question'
 
 const UserAnswer = db.define('useranswer', {
-  id: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    unique: true,
-    validate: {
-      notEmpty: true,
-      isInt: true,
-    }
-  },
+
   useranswer: {
     type: Sequelize.STRING,
     allowNull: false,
