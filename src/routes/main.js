@@ -1,8 +1,5 @@
 import koaRouter from 'koa-joi-router';
 
-import { isAuthenticated } from '../middleware/auth'
-import { isUnlocked } from '../middleware/isUnlocked'
-
 const router = koaRouter();
 router.prefix('/api')
 
@@ -24,9 +21,9 @@ const routes = [
     handler: ctrl
   },
   {
-  	method: 'get',
-  	path: '/userinfo',
-  	handler: userinfo	
+    method: 'get',
+    path: '/userinfo',
+    handler: [isAuthenticated, isUnlocked,userinfo]	
   },
 ];
 
