@@ -44,7 +44,7 @@ export async function checkAnswer(ctx) {
     }
     ctx.body = { response: true }
   }
-  else if(correctAttempts==1 && (ctx.body.answer in answers)) ctx.body = { response: "Already attempted" }
+  else if(correctAttempts==1) ctx.body = { response: "Already attempted" }
   else ctx.body = { response: false }
 
 }
