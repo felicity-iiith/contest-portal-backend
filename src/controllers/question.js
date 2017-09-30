@@ -10,8 +10,8 @@ export async function get(ctx) {
 }
 
 export async function checkAnswer(ctx) {
-  //var wrongAttempts=0
-  var correctAttempts=0
+  //let wrongAttempts=0
+  let correctAttempts=0
   const { qno } = ctx.params
   const question = await Question.findOne({
     where: { qno },
