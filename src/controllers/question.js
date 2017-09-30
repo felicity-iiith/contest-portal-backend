@@ -24,8 +24,9 @@ export async function checkAnswer(ctx) {
       userId: user.id 
     },
   })
+  const answers=JSON.parse(question.answer)
   for(var i in preAnswered){
-    if (preAnswered[i].useranswer in JSON.parse(question.answer))
+    if (preAnswered[i].useranswer in answers)
       correctAttempts+=1 
     // else{
     //   wrongAttempts+=1
@@ -34,7 +35,7 @@ export async function checkAnswer(ctx) {
   await UserAnswer.create(
     { questionId: question.id, userId: user.id, useranswer: ctx.body.answer}
   )
-  if (correctAttempts==0 && (ctx.body.answer in JSON.parse(question.answer))) {
+  if (correctAttempts==0 && (ctx.body.answer in answers)) {
     const { user } = ctx.state
     if (user.maxUnlock == qno) {
       user.maxUnlock += 1
@@ -43,7 +44,7 @@ export async function checkAnswer(ctx) {
     }
     ctx.body = { response: true }
   }
-  else if(correctAttempts==1) ctx.body = { response: "Already attempted" }
+  else if(correctAttempts==1 && (ctx.body.answer in answers)) ctx.body = { response: "Already attempted" }
   else ctx.body = { response: false }
 
 }
