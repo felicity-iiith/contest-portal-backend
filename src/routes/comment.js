@@ -25,7 +25,7 @@ const routes = [
   },
   {
     method: 'get',
-    path: '/:qno/getall',
+    path: '/:qno',
     handler: [ isAuthenticated, ctrlc.getAll ],
     validate: {
       params: {
