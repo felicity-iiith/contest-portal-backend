@@ -1,6 +1,5 @@
 import Question from '../models/Question'
 import Submission from '../models/Submission'
-import Comment from '../models/Comment'
 
 export async function get(ctx) {
   const { qno } = ctx.params
@@ -45,7 +44,7 @@ export async function checkAnswer(ctx) {
     }
     ctx.body = { response: true }
   }
-  else if(correctAttempts==1 && (ctx.body.answer in answers)) ctx.body = { response: "Already attempted" }
+  else if(correctAttempts==1) ctx.body = { response: "Already attempted" }
   else ctx.body = { response: false }
 
 }
@@ -53,5 +52,4 @@ export async function getAll(ctx) {
   ctx.body = await Question.findAll({
     attributes: { exclude: [ 'answer', 'body' ] }
   })
-  // XXX: Include only question number and title and nothing else
 }

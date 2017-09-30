@@ -2,7 +2,7 @@ import Sequelize from 'sequelize';
 import db from './db'
 import User from './User'
 import Question from './Question'
-
+ 
 const Comment = db.define('comment', {  
   comment: {
     type: Sequelize.STRING,
