@@ -12,7 +12,7 @@ const routes = [
   {
     method: 'post',
     path: '/:qno',
-    handler: [ isAuthenticated, ctrlc.addcomment ],
+    handler: [ isAuthenticated, ctrlc.addComment ],
     validate: {
       params: {
         qno: Joi.number()

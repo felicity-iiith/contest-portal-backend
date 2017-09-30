@@ -1,7 +1,7 @@
 import Question from '../models/Question'
 import Comment from '../models/Comment'
 
-export async function addcomment(ctx) { 
+export async function addComment(ctx) { 
   const { qno } = ctx.params
   const { user } = ctx.state
   const question = await Question.findOne({
