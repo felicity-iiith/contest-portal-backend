@@ -1,5 +1,5 @@
 import Question from '../models/Question'
-import UserAnswer from '../models/UserAnswer'
+import Submission from '../models/Submission'
 import Comment from '../models/Comment'
 
 export async function get(ctx) {
@@ -17,8 +17,8 @@ export async function checkAnswer(ctx) {
   })
   ctx.body = ctx.request.body;
   const {user} = ctx.state
-  await UserAnswer.create(
-    { questionId: question.id, userId: user.id, useranswer: ctx.body.answer}
+  await Submission.create(
+    { questionId: question.id, userId: user.id, submission: ctx.body.answer}
   )
   if (ctx.body.answer in JSON.parse(question.answer)) {
     const { user } = ctx.state
