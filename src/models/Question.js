@@ -35,6 +35,13 @@ const Question = db.define('question', {
       notEmpty: true,
     }
   },
+  score: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+    }
+  },
 });
 
 export default Question

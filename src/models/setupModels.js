@@ -14,11 +14,11 @@ export default async function setupModels() {
   ]);
   await Question.sync({ force: true })
   await Question.bulkCreate([
-    { qno: 1, title: 'QTitle 1', body: 'QBody 1', answer: JSON.stringify(['1','2','3'])},
-    { qno: 2, title: 'QTitle 2', body: 'QBody 2', answer: JSON.stringify(['2'])},
-    { qno: 3, title: 'QTitle 3', body: 'QBody 3', answer: JSON.stringify(['1','4'])},
-    { qno: 4, title: 'QTitle 4', body: 'QBody 4', answer: JSON.stringify(['3'])},
-    { qno: 5, title: 'QTitle 5', body: 'QBody 5', answer: JSON.stringify(['4'])},
+    { qno: 1, title: 'QTitle 1', body: 'QBody 1', answer: JSON.stringify(['1','2','3']), score: 30},
+    { qno: 2, title: 'QTitle 2', body: 'QBody 2', answer: JSON.stringify(['2']), score: 30},
+    { qno: 3, title: 'QTitle 3', body: 'QBody 3', answer: JSON.stringify(['1','4']), score: 90},
+    { qno: 4, title: 'QTitle 4', body: 'QBody 4', answer: JSON.stringify(['3']), score: 39},
+    { qno: 5, title: 'QTitle 5', body: 'QBody 5', answer: JSON.stringify(['4']), score: 80},
   ]);
   await Submission.sync({ force: true })
 }
