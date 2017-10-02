@@ -1,6 +1,6 @@
 import User from './User'
 import Question from './Question'
-import UserAnswer from './UserAnswer'
+import Submission from './Submission'
 // Remember to change if scores have been added
 
 export default async function setupModels() {
@@ -20,5 +20,5 @@ export default async function setupModels() {
     { qno: 4, title: 'QTitle 4', body: 'QBody 4', answer: JSON.stringify(['3']), score: 39},
     { qno: 5, title: 'QTitle 5', body: 'QBody 5', answer: JSON.stringify(['4']), score: 80},
   ]);
-  await UserAnswer.sync({ force: true })
+  await Submission.sync({ force: true })
 }

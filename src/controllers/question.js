@@ -1,5 +1,6 @@
 import Question from '../models/Question'
-import UserAnswer from '../models/UserAnswer'
+import Submission from '../models/Submission'
+import Comment from '../models/Comment'
 
 export async function get(ctx) {
   const { qno } = ctx.params
@@ -18,7 +19,7 @@ export async function checkAnswer(ctx) {
   })
   ctx.body = ctx.request.body;
   const {user} = ctx.state
-  const preAnswered = await UserAnswer.findAll({
+  const preAnswered = await Submission.findAll({
     where:{
       questionId: question.id,
       userId: user.id 
@@ -26,14 +27,14 @@ export async function checkAnswer(ctx) {
   })
   const answers=JSON.parse(question.answer)
   for(var i in preAnswered){
-    if (preAnswered[i].useranswer in answers)
+    if (preAnswered[i].submission in answers)
       correctAttempts+=1 
     // else{
     //   wrongAttempts+=1
     // }
   }
-  await UserAnswer.create(
-    { questionId: question.id, userId: user.id, useranswer: ctx.body.answer}
+  await Submission.create(
+    { questionId: question.id, userId: user.id, submission: ctx.body.answer}
   )
   if (correctAttempts==0 && (ctx.body.answer in answers)) {
     const { user } = ctx.state
