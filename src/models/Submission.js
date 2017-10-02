@@ -3,9 +3,9 @@ import db from './db'
 import User from './User'
 import Question from './Question'
 
-const UserAnswer = db.define('useranswer', {
+const Submission = db.define('submission', {
 
-  useranswer: {
+  submission: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
@@ -14,7 +14,7 @@ const UserAnswer = db.define('useranswer', {
   },
 });
 
-UserAnswer.belongsTo(Question)
-UserAnswer.belongsTo(User)
+Submission.belongsTo(Question)
+Submission.belongsTo(User)
 
-export default UserAnswer
+export default Submission
