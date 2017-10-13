@@ -20,7 +20,7 @@ export async function checkAnswer(ctx) {
   await Submission.create(
     { questionId: question.id, userId: user.id, submission: ctx.body.answer}
   )
-  if (ctx.body.answer in JSON.parse(question.answer)) {
+  if (JSON.parse(question.answer).includes(ctx.body.answer)) {
     const { user } = ctx.state
     if (user.maxUnlock == qno) {
       user.maxUnlock += 1
